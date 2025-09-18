@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 JS</title>
+</head>
+<body>
+<script>
+        //Data Diri
+        let nama = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "Manajer";
+        let status = "Menikah";
+
+        //If Kondisional gaji berdasarkan jabatan
+        let gajiP;
+        if (jabatan === "Manajer") {
+            gajiP = 15000000;
+        } else if (jabatan === "Asisten Manajer") {
+            gajiP = 10000000;
+        } else {
+            gajiP = 5000000;
+        }
+
+        //menghitung tunjangan
+        let tunjanganJabatan = 0.15 * gajiP;
+        let bpjs = 0.10 * gajiP;
+        let tunjanganKeluarga = (status === "Menikah") ? 0.20 * gajiP : 0;
+
+        //menghitung total gaji
+        let totalGaji = gajiP + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+        //Mencetak tabel data
+        //Thead
+        document.write("<table border='1' cellspacing='1' cellpadding='5'>");
+        document.write("<thead>");
+        document.write("<tr>");
+        document.write("<th>Nama Pegawai</th><th>Umur</th><th>Jabatan</th><th>Status</th>");
+        document.write("<th>Gaji Pokok</th><th>Tunjangan Jabatan</th><th>BPJS</th><th>Tunjangan Keluarga</th>");
+        document.write("</tr>");
+        document.write("</thead>");
+
+        //tbody
+        document.write("<tbody>");
+        document.write("<tr>");
+        document.write("<td>"+nama+"</td>");
+        document.write("<td>"+umur+" Tahun</td>");
+        document.write("<td>"+jabatan+"</td>");
+        document.write("<td>"+status+"</td>");
+        document.write("<td>"+gajiP+"</td>");
+        document.write("<td>"+tunjanganJabatan+"</td>");
+        document.write("<td>"+bpjs+"</td>");
+        document.write("<td>"+tunjanganKeluarga+"</td>");
+        document.write("</tr>");
+        document.write("</tbody>");
+
+        //tfoot
+        document.write("<tfoot>");
+        document.write("<tr><td colspan='7' align='right'><b>Total Gaji</b></td><td>"+totalGaji+"</td></tr>");
+        document.write("</tfoot>");
+        document.write("</table>");
+    </script>
+</body>
+</html>
